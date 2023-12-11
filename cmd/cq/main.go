@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"os"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -117,7 +118,14 @@ func main() {
 
 	r.GET("/", getQuotes)
 
-	err := r.Run(":8080")
+  port := os.Getenv("PORT")
+
+  if port == "" {
+    port = "3000"
+  }
+
+	err := r.Run("0.0.0.0:" + port)
+
 	if err != nil {
 		fmt.Println(err)
 	}
