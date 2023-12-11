@@ -53,7 +53,6 @@ var quotes = []string{
 	"ithinkitsprettynormalforsomeonetonotusespaces",
 	"bro's finding funny just F5'ing the page",
 	"TO THE MOON",
-	"i think gays are pretty straight when they are ask about sexuality lmao",
 	"DANG IT",
 	"i love you arch linux... i love you",
 	"imagine going to a 404 page to see which is the quote of the day",
@@ -118,11 +117,11 @@ func main() {
 
 	r.GET("/", getQuotes)
 
-  port := os.Getenv("PORT")
+	port := os.Getenv("PORT")
 
-  if port == "" {
-    port = "3000"
-  }
+	if port == "" {
+		port = "3000"
+	}
 
 	err := r.Run("0.0.0.0:" + port)
 
